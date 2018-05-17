@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Bse Styles
+   ========================================================================== */
+
+:root {
+  --color-dark-grey: #202E35;
+  --color-light-blue: #E9EEF1;
+  --color-white: #fff;
+  --color-light-pink: #F39185;
+}
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::selection {
+    background: var(--color-light-pink);
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #202E35;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* ==========================================================================
+   Custom Styles
+   ========================================================================== */
+
+    body {
+      background: var(--color-dark-grey);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-wrapper {
+      width: 40%;
+      margin: 0 auto;
+    }
+
+    .logo-color-two {
+      fill: var(--color-light-pink);
+    }
+
+    .logo-color-one {
+      fill: var(--color-light-blue);
+    }
