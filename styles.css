@@ -3,32 +3,43 @@
    ========================================================================== */
 
 :root {
-  --color-dark-grey: #202E35;
-  --color-light-blue: #E9EEF1;
+  --color-dark-grey: #202e35;
+  --color-light-blue: #e9eef1;
   --color-white: #fff;
-  --color-light-pink: #F39185;
+  --color-light-pink: #f39185;
 }
 
 html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
-    font-family: sans-serif;
-    text-align:center;
+  box-sizing: border-box;
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: sans-serif;
+
+  font-variant-ligatures: common-ligatures discretionary-ligatures;
+
+  /* Use smooth scrolling for fragment links */
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 ::selection {
-    background: var(--color-light-pink);
-    text-shadow: none;
+  background: var(--color-light-pink);
+  text-shadow: none;
 }
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #202E35;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--color-dark-grey);
+  margin: 1em 0;
+  padding: 0;
 }
 
 audio,
@@ -37,17 +48,17 @@ iframe,
 img,
 svg,
 video {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 a,
@@ -61,28 +72,116 @@ a:hover {
   text-decoration: underline;
 }
 
+svg {
+  width: 100%;
+}
 
 /* ==========================================================================
    Custom Styles
    ========================================================================== */
 
-    body {
-      background: var(--color-dark-grey);
-      color: var(--color-white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+body {
+  background: var(--color-dark-grey);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .image-wrapper {
-      width: 40%;
-      margin: 0 auto;
-    }
+.logo-wrapper {
+  width: 50%;
+  text-align: center;
+}
 
-    .logo-color-two {
-      fill: var(--color-light-pink);
-    }
+/* ANIMATED SVG LOGO */
 
-    .logo-color-one {
-      fill: var(--color-light-blue);
-    }
+.svg-logo-all {
+  --animation-duration: 4000ms;
+
+  --fill-color: var(--color-white);
+  stroke: var(--color-light-blue);
+  stroke-width: 5;
+  fill: none;
+}
+
+.svg-logo-1 {
+  stroke-dasharray: 616 618;
+  stroke-dashoffset: 617;
+  animation: svg-logo-draw var(--animation-duration) ease-out 0ms forwards;
+}
+
+.svg-logo-2 {
+  stroke-dasharray: 738 740;
+  stroke-dashoffset: 739;
+  animation: svg-logo-draw var(--animation-duration) ease-out 125ms forwards;
+}
+
+.svg-logo-3 {
+  stroke-dasharray: 738 740;
+  stroke-dashoffset: 739;
+  animation: svg-logo-draw var(--animation-duration) ease-out 250ms forwards;
+}
+
+.svg-logo-4 {
+  stroke-dasharray: 836 838;
+  stroke-dashoffset: 837;
+  animation: svg-logo-draw var(--animation-duration) ease-out 375ms forwards;
+}
+
+.svg-logo-5 {
+  stroke-dasharray: 977 979;
+  stroke-dashoffset: 978;
+  animation: svg-logo-draw var(--animation-duration) ease-out 500ms forwards;
+}
+
+.svg-logo-6 {
+  stroke-dasharray: 847 849;
+  stroke-dashoffset: 848;
+  animation: svg-logo-draw var(--animation-duration) ease-out 625ms forwards;
+}
+
+.svg-logo-7 {
+  --fill-color: var(--color-light-pink);
+  stroke-dasharray: 1156 1158;
+  stroke-dashoffset: 1157;
+  animation: svg-logo-draw var(--animation-duration) ease-out 750ms forwards;
+}
+
+.svg-logo-8 {
+  stroke-dasharray: 898 900;
+  stroke-dashoffset: 899;
+  animation: svg-logo-draw var(--animation-duration) ease-out 875ms forwards;
+}
+
+.svg-logo-9 {
+  --fill-color: var(--color-light-pink);
+  stroke-dasharray: 2626 2628;
+  stroke-dashoffset: 2627;
+  animation: svg-logo-draw var(--animation-duration) ease-out 0ms forwards;
+}
+
+@keyframes svg-logo-draw {
+  0% {
+    stroke: var(--color-light-blue);
+    opacity: 0.3;
+    fill: none;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    stroke: var(--color-light-blue);
+    opacity: 0.3;
+    fill: none;
+  }
+  75% {
+    stroke-dashoffset: 0;
+    stroke: none;
+    opacity: 0.3;
+    fill: var(--fill-color);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke: none;
+    opacity: 1;
+    fill: var(--fill-color);
+  }
+}
